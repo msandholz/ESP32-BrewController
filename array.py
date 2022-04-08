@@ -67,7 +67,7 @@
 #print(b)
 
 
-from pickle import FALSE, TRUE
+import os
 from threading import Thread
 import threading
 import time
@@ -76,7 +76,7 @@ import random
 
 class Recepy:
     def __init__(self):
-        self.filename = "recepy.txt"
+        self.filename = os.path.dirname(__file__)+ "/recepy.txt"
         self.recepy = []
         self.loadRecepy()
         self.printRecepy()
@@ -117,7 +117,7 @@ class Recepy:
 class Brewing:
     def __init__(self, recepy:Recepy):
         self.recepy = recepy
-        self.pause = FALSE
+        self.pause = False
        
 
     def start(self):
@@ -153,7 +153,7 @@ class TempSensors(threading.Thread):
         
 
 if __name__ == "__main__":
-    
+
     R = Recepy()
     R.printRecepy()
     print(R.numOfItems)
