@@ -1,3 +1,11 @@
+Öffnen Sie nun das Codebeispiel GraphicTest der Bibliothek.
+Klicken Sie dazu auf:
+Datei -> Beispiele -> U8g2 -> u8x8-> GraphicTest
+Fügen Sie nun den folgenden Konstruktor für das Display in das Programm ein, wie im Bild unten zusehen:
+U8X8_SSD1309_128X64_NONAME2_4W_SW_SPI u8x8(13, 11, 10, 9, 8);
+
+
+
 # ESP32-BrewController
 
 
