@@ -45,3 +45,80 @@ void setup() {
 void loop() {
   // Hier kannst du deinen Code einfügen, um das Display zu aktualisieren
 }
+
+
+#########
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<body>
+
+<h2>Maischen und Läutern</h2>
+<form action="/action_page.php">
+<table>
+  <tr>
+    <th></th>
+    <th>Action</th> 
+    <th>Temp [&deg;C]</th>
+    <th>Time [min]</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Einmaischen</td>
+    <td><input type="number" min="40" max="99" name="fname" value="45"></td>
+    <td><input type="number" min="0" max="90" name="fname" value="25"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Rast</td>
+    <td><input type="number" min="40" max="99" name="fname" value="62"></td>
+    <td><input type="number" min="0" max="90" name="fname" value="30"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Rast</td>
+    <td><input type="number" min="40" max="99" name="fname" value="72"></td>
+    <td><input type="number" min="0" max="90" name="fname" value="30"></td>
+    <td>+ / - </td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Abmaischen</td>
+    <td><input type="number" min="40" max="99" name="fname" value="78"></td>
+    <td><input type="number" min="0" max="90" name="fname" value="0"></td>
+    <td></td>
+  </tr> 
+</table>
+<h2>Würzekochen</h2>
+<table>
+  <tr>
+    <th></th>
+    <th>Time [min]</th> 
+  </tr>
+  <tr>
+    <th>Kochdauer gesamt:</th>
+    <td><input type="number" min="0" max="180" name="fname" value="60"></td>
+  </tr>
+  <tr>
+    <th>Hopfengabe 1:</th>
+    <td><input type="number" min="0" max="180" name="fname" value="0"></td>
+  </tr>
+  <tr>
+    <th>Hopfengabe 2:</th>
+    <td><input type="number" min="0" max="180" name="fname" value="30"></td>
+  </tr>
+</table>
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>
+
