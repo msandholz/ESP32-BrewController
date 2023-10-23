@@ -53,11 +53,29 @@ void loop() {
 <head>
 <title>Page Title</title>
 <script>
+function init() {
+	Brix2Plato();
+    CorrectPlato();
+
+}
+
 // transform Brix to Plato
 function Brix2Plato()
 {
 	var brx = document.getElementById("brix").value;
 	document.getElementById("plato").innerHTML = brx * 0.962;
+}
+
+
+// Temperaturkorrektur Plato
+function CorrectPlato()
+{
+	var plato = parseFloat(document.getElementById("plato").innerHTML);
+	var temp = parseFloat(document.getElementById("temp").value);
+  
+    var tempfactor = 1.00130346 / (1 + 0.0038661 * (temp - 20));
+   
+   	document.getElementById("result").innerHTML = plato * tempfactor;
 }
 
 </script>
@@ -70,7 +88,7 @@ function Brix2Plato()
   </style>
 
 </head>
-<body>
+<body onload="init()">
 
 <div class="box">
         <h3>Umrechnung von Brix nach Plato</h3>
@@ -79,7 +97,7 @@ function Brix2Plato()
 			<table style="border-style:none;">
 				<tbody><tr>
 					<td>Gemessene Stammwürze (°Brix)</td>
-					<td><input class="infield" type="text" name="density_input" value="13" id="brix" onkeyup="javascript:Brix2Plato()"></td>
+					<td><input class="infield" type="number" name="density_input" value="13" id="brix" onchange="javascript:Brix2Plato()"></td>
 				</tr>
 				<tr>
 				  <td>Gemessene Stammwürze (°Plato):</td>
@@ -87,11 +105,11 @@ function Brix2Plato()
 				</tr>
                 <tr>
             		<td>Gemessene Temperatur (°C):</td>
-            		<td><input class="infield" type="text" name="temp" value="20" onkeyup="javascript:_correct_wort()"></td>
+            		<td><input class="infield" type="number" name="temp" id="temp" value="20" onchange="javascript:CorrectPlato()"></td>
             	</tr>
                 <tr>
             		<td>Tatsächliche Stammwürze (°Plato):</td>
-            		<td><div class="infield" type="text" name="wort" value="12" onkeyup="javascript:_correct_wort()">223</div></td>
+            		<td><div class="infield" type="text" name="wort" id="result">223</div></td>
             	</tr>
 			</tbody></table>
         </form>
@@ -101,5 +119,8 @@ function Brix2Plato()
 
 </body>
 </html>
+
+
+
 
 
