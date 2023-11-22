@@ -8,3 +8,43 @@ https://github.com/SensorsIot/NTP-time-for-ESP8266-and-ESP32
 
 Europe	Berlin,Germany	CET-1CEST-2,M3.5.0/02:00:00,M10.5.0/03:00:00
 
+time_t now;
+tm timeinfo;
+
+
+
+time(&now);
+localtime_r(&now, &imeinfo);
+long unsigned lastNTPtime;
+unsigned long lastEntryTime;
+
+void setup() {
+  configTime(0,0,NTP-SERVER);
+  setenv("TZ", TZ_INFO, 1);
+ getTimeReducedTraffic(3600);
+  showTime(timeinfo);
+  lastNTPtime = time(&now);
+  lastEntryTime = millis();
+
+}
+
+void loop() {
+  getTimeReducedTraffic(3600);
+  //getNTPtime(10);
+  showTime(timeinfo);
+  delay(1000);
+}
+
+void getTimeReducedTraffic(int sec) {
+  tm *ptm;
+  if ((millis() - lastEntryTime) < (1000 * sec)) {
+    now = lastNTPtime + (int)(millis() - lastEntryTime) / 1000;
+  } else {
+    lastEntryTime = millis();
+    lastNTPtime = time(&now);
+    now = lastNTPtime;
+    Serial.println("Get NTP time");
+  }
+  ptm = localtime(&now);
+  timeinfo = *ptm;
+  }
