@@ -48,3 +48,26 @@ void getTimeReducedTraffic(int sec) {
   ptm = localtime(&now);
   timeinfo = *ptm;
   }
+
+
+bool getNTPtime(int sec) {
+
+  {
+    uint32_t start = millis();
+    do {
+      time(&now);
+      localtime_r(&now, &timeinfo);
+      Serial.print(".");
+      delay(10);
+    } while (((millis() - start) <= (1000 * sec)) && (timeinfo.tm_year < (2016 - 1900)));
+    
+    if (timeinfo.tm_year <= (2016 - 1900)) return false;  // the NTP call was not successful
+    Serial.print("now ");  Serial.println(now);
+    char time_output[30];
+    strftime(time_output, 30, "%a  %d-%m-%y %T", localtime(&now));
+    Serial.println(time_output);
+    Serial.println();
+  
+  }
+  return true;
+}
