@@ -71,3 +71,5 @@ bool getNTPtime(int sec) {
   }
   return true;
 }
+
+ text-align: center;
