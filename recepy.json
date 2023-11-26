@@ -1,0 +1,12 @@
+{
+    "RECEPY_NAME":"Pale Ale",
+    "RECEPY_STEPS":
+    [ 
+        { "STEP_NAME":"Einmaischen", "STEP_TEMP":50, "STEP_TIME":10},
+        { "STEP_NAME":"Rast 1", "STEP_TEMP":62, "STEP_TIME":90},
+        { "STEP_NAME":"Abmaischen", "STEP_TEMP":78, "STEP_TIME":5}
+      ],
+    "BOIL_STEPS": 
+        { "STEP_NAME":"Würze kochen", "STEP_TEMP":99, "HOP_TIME_1":90, "HOP_TIME_2":90 }
+     
+}

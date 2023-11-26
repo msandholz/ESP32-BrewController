@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>%HOSTNAME%</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="refresh" content="5" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.js" crossorigin="anonymous"></script>
+    <script>
+        function callRestAPI() {          
+          const xhttp = new XMLHttpRequest();
+          const url = "/getdata?TARGET_TEMP=" + document.getElementById("TARGET_TEMP").value + "&TARGET_TIME=" + document.getElementById("TARGET_TIME").value;
+          xhttp.onreadystatechange = function() { if (xhttp.readyState == 4 && xhttp.readyState == 200) { callback(xhttp.responseText); } }
+          
+          xhttp.open("GET", url, true);
+          xhttp.send();
+        }
+
+        function TempCount(updown) {
+	        var value = document.getElementById("TARGET_TEMP").value;
+           
+            if (updown == "+"){
+                if(value < 100) { value++; }
+            } else {
+                if(value > 25) { value--; }
+            }
+ 	        document.getElementById("TARGET_TEMP").value = value;
+            callRestAPI();
+        }
+
+        function TimeCount(updown) {
+	        var value = document.getElementById("TARGET_TIME").value;
+            if (updown == "+"){
+                if(value < 180) { value++; }
+            } else {
+                if(value > 0) { value--; } 
+            }
+ 	        document.getElementById("TARGET_TIME").value = value;
+            callRestAPI();
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/"><i class="fa-solid fa-house-chimney" style="font-size:36px"></i></a>
+        <a href="/recepy"><i class="fa-solid fa-beer-mug-empty" style="font-size:36px"></i></a>
+        <a href="/calc"><i class="fa-solid fa-calculator" style="font-size:36px"></i></a>
+        <a href="/config"><i class="fa-solid fa-gear" style="font-size:36px;"></i></a>
+        <a href="/check"><i class="fa-solid fa-list-check" style="font-size:36px"></i></a>
+        <a href="%EXTERNAL_URL%" target="_blank"><i class="fa-solid fa-chart-line" style="font-size:36px"></i></a>
+        <a href="/update" target="_blank"><i class="fa-solid fa-upload" style="font-size:36px"></i></a>
+    </div>
+      
+    <div class="row">
+        <h2>Brew Control Center</h2>
+        <center>
+            <table class="center">
+                <tr>
+                    <td class="txt_center"><b>Target Temp [&deg;C]:</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="big-button" type="submit" value="-" onclick="javascript:TempCount('-')">
+                        <input class="big-font" type="number" min="20" max="99" size="4" name="TARGET_TEMP" id="TARGET_TEMP" value="%TARGET_TEMP%" onchange="javascript:callRestAPI()">
+                        <input class="big-button" type="submit" value="+" onclick="javascript:TempCount('+')">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt_center"><b>Target Time [min]:</b></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="big-button" type="submit" value="-" onclick="javascript:TimeCount('-')">
+                        <input class="big-font" type="number" min="0" max="180" size="5" name="TARGET_TIME" id="TARGET_TIME" value="%TARGET_TIME%" onchange="javascript:callRestAPI()">
+                        <input class="big-button" type="submit" value="+" onclick="javascript:TimeCount('+')">
+                    </td>
+                </tr>
+            </table> 
+            <table class="cneter"> 
+                <tr>
+                    <th class="txt_center"><b>Temp 1:</b></th>
+                    <th class="txt_center"><b>Temp 2:</b></th>
+                    <th class="txt_center"><b>Temp 3:</b></th>
+                </tr>
+                <tr>
+                    <td class="txt_center">%CURR_TEMP_1% &#x2103;</td>
+                    <td class="txt_center">%CURR_TEMP_2% &#x2103;</td>
+                    <td class="txt_center">%CURR_TEMP_3% &#x2103;</td>
+                </tr>
+            </table>
+        </center><br>
+    </div>
+    <div class="footer">&copy; by Sandholz Engineering (Release: %RELEASE%)</div>
+</body>
+</html>

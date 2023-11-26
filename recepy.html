@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <title>%HOSTNAME%</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/"><i class="fa-solid fa-house-chimney" style="font-size:36px"></i></a>
+        <a href="/recepy"><i class="fa-solid fa-beer-mug-empty" style="font-size:36px"></i></a>
+        <a href="/calc"><i class="fa-solid fa-calculator" style="font-size:36px"></i></a>
+        <a href="/config"><i class="fa-solid fa-gear" style="font-size:36px;"></i></a>
+        <a href="/check"><i class="fa-solid fa-list-check" style="font-size:36px"></i></a>
+        <a href="%EXTERNAL_URL%" target="_blank"><i class="fa-solid fa-chart-line" style="font-size:36px"></i></a>
+        <a href="/update" target="_blank"><i class="fa-solid fa-upload" style="font-size:36px"></i></a>
+    </div>
+      
+    <div class="row">
+        <form action="/save-config">
+        <center>
+            <h2>Maischen und Läutern</h2>
+        <table>
+            <tr>
+            <th></th>
+            <th>Action</th> 
+            <th>Temp [&deg;C]</th>
+            <th>Time [min]</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Einmaischen</td>
+            <td><input type="number" min="40" max="99" name="fname" value="45" size="8"></td>
+            <td><input type="number" min="0" max="90" name="fname" value="25" size="8"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Rast</td>
+            <td><input type="number" min="40" max="99" name="fname" value="62" size="8"></td>
+            <td><input type="number" min="0" max="90" name="fname" value="30" size="8"></td>
+            <td><a href="/add"><button>+</button></a><a href="/remove"><button>-</button></a> </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Abmaischen</td>
+            <td><input type="number" min="40" max="99" name="fname" value="78" size="8"></td>
+            <td><input type="number" min="0" max="90" name="fname" value="0" size="8"></td>
+            <td></td>
+        </tr> 
+    </table>
+    <h2>Würzekochen</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Time [min]</th> 
+        </tr>
+        <tr>
+            <th>Kochdauer gesamt:</th>
+            <td><input type="number" min="0" max="180" name="fname" value="60" size="8"></td>
+        </tr>
+        <tr>
+            <th>Hopfengabe 1:</th>
+            <td><input type="number" min="0" max="180" name="fname" value="0" size="8"></td>
+        </tr>
+        <tr>
+            <th>Hopfengabe 2:</th>
+            <td><input type="number" min="0" max="180" name="fname" value="30" size="8"></td>
+        </tr>
+    </table>
+        <input type="submit" value="Submit">
+    </form> 
+            
+    </center><br>
+    </div>
+    <div class="footer">&copy; by Sandholz Engineering (Release: %RELEASE%)</div>
+</body>
+</html>

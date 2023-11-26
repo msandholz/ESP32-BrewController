@@ -1,0 +1,12 @@
+{
+    "HOSTNAME":"ESP-BrewController",
+    "MQTT_BROKER":"192.168.178.12",
+    "EXTERNAL_URL":"http://192.168.178.12:3000/d/cLwyHTWgz/fermentation-control-system?orgId=1",
+    "TARGET_TEMP" : 52,
+    "TARGET_TEMP_MIN" : 20,
+    "TARGET_TEMP_MAX" : 99,
+    "TEMP_HYSTERESIS" : 5,
+    "TARGET_TIME" : 0,
+    "TARGET_TIME_MIN" : 0,
+    "TARGET_TIME_MAX" : 120
+}
