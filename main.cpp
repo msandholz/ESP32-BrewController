@@ -59,8 +59,8 @@
 // Setting parameters with default values
 // ======================================================================
 
-const char* WIFI_SSID = "WLAN";                      // WLAN-SSID
-const char* WIFI_PW = "74696325262072177928";        // WLAN-Password
+const char* WIFI_SSID = "1234";                      // WLAN-SSID
+const char* WIFI_PW = "1234";        // WLAN-Password
 String HOSTNAME = "ESP-BrewController";              // Enter Hostname here
 String MQTT_BROKER = "192.168.178.12";               // MQTT-Broker
 String EXTERNAL_URL = "www.telekom.de";              // URL of external Website
