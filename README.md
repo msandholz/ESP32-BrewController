@@ -28,7 +28,15 @@ void keepWiFiAlive(void * parameters) {
 } 
 
 void setup() {
-
+  xTaskCreateToPinnedToCore(
+    keepWiFiAlive,
+    "Keeping WiFi Alive",
+    2024;
+    NULL,
+    1,
+    NULL,
+    0
+  );
 }
 
 
