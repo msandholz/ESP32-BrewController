@@ -2,6 +2,7 @@
 
 ## ToDo: Next Release (0.6):
 - add code for a rtos related wifi control
+
 WIFI_TIMEOUT_MS 200000
 
 void keepWiFiAlive(void * parameters) {
