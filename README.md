@@ -1,6 +1,13 @@
 # ESP Brew Controller: Change Log
 
-## ToDo: Next Release (0.6):
+
+## ToDo: Next Release (0.7):
+https://github.com/wemos/D1_mini_Examples/blob/master/examples/02.Special/CheckFlashConfig/CheckFlashConfig.ino
+
+
+
+
+## Release (0.6):
 - add code for a rtos related wifi control
 
 WIFI_TIMEOUT_MS 200000
