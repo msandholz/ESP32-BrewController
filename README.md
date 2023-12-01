@@ -3,6 +3,7 @@
 
 ## ToDo: Next Release (0.7):
 https://github.com/wemos/D1_mini_Examples/blob/master/examples/02.Special/CheckFlashConfig/CheckFlashConfig.ino
+https://github.com/espressif/arduino-esp32/blob/master/libraries/ESP32/examples/FreeRTOS/BasicMultiThreading/BasicMultiThreading.ino
 
 
 
