@@ -4,6 +4,11 @@ Platform.ini: https://docs.platformio.org/en/latest/boards/espressif32/az-delive
 Pinout: https://cdn.shopify.com/s/files/1/1509/1638/files/ESP32_DevKit_C_V4_Pinout.pdf?v=1615364529
 
 
+Board: AZDelivery LOLIN32 Lite V1.0.0
+Platform.ini: https://docs.platformio.org/en/latest/boards/espressif32/lolin32_lite.html
+Pinout: https://cdn.shopify.com/s/files/1/1509/1638/files/ESP32_Lolin32_Pinout.pdf?v=1608455156
+
+
 ## ToDo: Next Release (0.7):
 https://github.com/wemos/D1_mini_Examples/blob/master/examples/02.Special/CheckFlashConfig/CheckFlashConfig.ino
 https://github.com/espressif/arduino-esp32/blob/master/libraries/ESP32/examples/FreeRTOS/BasicMultiThreading/BasicMultiThreading.ino
