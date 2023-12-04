@@ -1,12 +1,12 @@
 # ESP Brew Controller: Change Log
-Board: AZ-Delivery ESP-32 Dev Kit C V4
-Platform.ini: https://docs.platformio.org/en/latest/boards/espressif32/az-delivery-devkit-v4.html
-Pinout: https://cdn.shopify.com/s/files/1/1509/1638/files/ESP32_DevKit_C_V4_Pinout.pdf?v=1615364529
+- Board: AZ-Delivery ESP-32 Dev Kit C V4
+- Platform.ini: https://docs.platformio.org/en/latest/boards/espressif32/az-delivery-devkit-v4.html
+- Pinout: https://cdn.shopify.com/s/files/1/1509/1638/files/ESP32_DevKit_C_V4_Pinout.pdf?v=1615364529
 
 
-Board: AZDelivery LOLIN32 Lite V1.0.0
-Platform.ini: https://docs.platformio.org/en/latest/boards/espressif32/lolin32_lite.html
-Pinout: https://cdn.shopify.com/s/files/1/1509/1638/files/ESP32_Lolin32_Pinout.pdf?v=1608455156
+- Board: AZDelivery LOLIN32 Lite V1.0.0
+- Platform.ini: https://docs.platformio.org/en/latest/boards/espressif32/lolin32_lite.html
+- Pinout: https://cdn.shopify.com/s/files/1/1509/1638/files/ESP32_Lolin32_Pinout.pdf?v=1608455156
 
 
 ## ToDo: Next Release (0.7):
